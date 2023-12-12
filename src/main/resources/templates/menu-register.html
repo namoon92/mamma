@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>料理登録フォーム</title>
+    <link th:href="@{/css/common.css}" rel="styleSheet">
+</head>
+<body>
+
+<h2>料理登録フォーム</h2>
+
+<form th:action="@{/menu-register/register}" method="post" th:object="${menu}">
+
+    <div>
+        <label for="menuName">メニュー名:</label>
+        <input type="text" id="menuName" name="menuName" required>
+    </div>
+
+    <div>
+        <label for="menuCategoryId">カテゴリ:</label>
+        <span>
+            <input type="checkbox" id="stapleFood" name="menuCategoryId" value="1" />
+            <label for="coding">主食</label>
+        </span>
+        <span>
+            <input type="checkbox" id="mainDish" name="menuCategoryId" value="2" />
+            <label for="music">主菜</label>
+        </span>
+        <span>
+            <input type="checkbox" id="sideDish" name="menuCategoryId" value="3" />
+            <label for="music">副菜</label>
+        </span>
+        <span>
+            <input type="checkbox" id="fruits" name="menuCategoryId" value="4" />
+            <label for="music">果物</label>
+        </span>
+    </div>
+
+    <div>
+        <label for="timingId">タイミング:</label>
+        <span>
+            <input type="checkbox" id="whenever" name="timingId" value="0" />
+            <label for="coding">指定なし</label>
+        </span>
+        <span>
+            <input type="checkbox" id="breakFast" name="timingId" value="1" />
+            <label for="coding">朝食</label>
+        </span>
+        <span>
+            <input type="checkbox" id="lunch" name="timingId" value="2" />
+            <label for="music">昼食</label>
+        </span>
+        <span>
+            <input type="checkbox" id="dinner" name="timingId" value="3" />
+            <label for="music">夕食</label>
+        </span>
+        <span>
+            <input type="checkbox" id="snack" name="timingId" value="4" />
+            <label for="music">おやつ</label>
+        </span>
+    </div>
+
+    <div>
+        <label for="favoriteLevel">お気に入り度（％）:</label>
+        <input type="number" id="favoriteLevel" name="favoriteLevel" required>
+    </div>
+    <div>
+        <button type="submit">登録</button>
+    </div>
+
+</form>
+
+</body>
+</html>
